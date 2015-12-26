@@ -46,6 +46,10 @@ def jifftext(string,speed='3'):
 	string.encode('ascii',errors='ignore')
 	string = string.replace("'",'"')
 	unique_id = hashlib.md5(string).hexdigest()[:6]
+
+	for i in range(10):
+		string = string.split(" ")[0] + " "  +  string
+
 	for i in range(15):
 		string = string + " " + string.split(" ")[-1]
 
@@ -78,8 +82,8 @@ convert mail_canvas.png -gravity northwest -pointsize 17 -size 500x caption:'foo
 '''
 
 if __name__ == '__main__':
-	string = '''There is a theory which states that if ever anyone discovers exactly what the Universe is for and why it is here, it will instantly disappear and be replaced by something even more bizarre and inexplicable. There is another theory which states that this has already happened.
-	'''
+	string = '''Not unnaturally, many elevators imbued with intelligence and precognition became terribly frustrated with the mindless business of going up and down, up and down, experimented briefly with the notion of going sideways, as a sort of existential protest, demanded participation in the decision-making process and finally took to squatting in basements sulking
+'''
 	jifftext(string,speed='3')
 	#gifmail(string,speed='9')
 	
