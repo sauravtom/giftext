@@ -12,10 +12,7 @@ def plog(text):
 def find_all(string, sub):
     return [i for i in range(len(string)) if string.startswith(sub, i)]
 
-def gifmail(speed='9'):
-	string = '''The speed of the mail can be changed as per need.
-And you can add emojis too 😃 😄
-'''
+def gifmail(string,speed='9'):
 	string = string + " "
 	string = string.replace("'",'"')
 	unique_id = hashlib.md5(string).hexdigest()[:6]
@@ -45,9 +42,13 @@ And you can add emojis too 😃 😄
 
 
 
-def main():
-	string= "they bowed down to him rather, because he was all of these things, and then again he was all of these things because"
+def jifftext(string,speed='3'):
+	string.encode('ascii',errors='ignore')
+	string = string.replace("'",'"')
 	unique_id = hashlib.md5(string).hexdigest()[:6]
+	for i in range(15):
+		string = string + " " + string.split(" ")[-1]
+
 	word_arr = string.split(" ")
 
 	os.system("mkdir %s/%s"%(DIR_PATH,unique_id))
@@ -55,10 +56,11 @@ def main():
 	for counter,word in enumerate(word_arr):
 		print word,counter
 		#gen_image(unique_id,word,counter)
-		os.system("convert %s/yellow.png -gravity center -weight Bold -pointsize 20 -annotate 0 '%s'  %s/%s/%s.png"%(DIR_PATH,word,DIR_PATH,unique_id,counter))
+		os.system("convert -background white -gravity center  -fill black -pointsize 17 -size 100x100 caption:'%s' %s/%s/%s.png"%(word,DIR_PATH,unique_id,counter))
+		#os.system("convert %s/yellow.png -gravity center -weight Bold -pointsize 20 -annotate 0 '%s'  %s/%s/%s.png"%(DIR_PATH,word,DIR_PATH,unique_id,counter))
 	
 	os.system("ffmpeg -i %s/%s/%%1d.png %s/%s/semi_final.gif"%(DIR_PATH,unique_id,DIR_PATH,unique_id))
-	os.system("convert -delay 10x30 %s/%s/semi_final.gif %s/%s/final.gif"%(DIR_PATH,unique_id,DIR_PATH,unique_id))
+	os.system("convert -delay 10x%s0 %s/%s/semi_final.gif %s/%s/final.gif"%(speed,DIR_PATH,unique_id,DIR_PATH,unique_id))
 
 	os.system("cp %s/%s/final.gif %s/%s.gif"%(DIR_PATH,unique_id,DIR_PATH,unique_id))
 	os.system("rm -rf %s/%s"%(DIR_PATH,unique_id))
@@ -76,6 +78,8 @@ convert mail_canvas.png -gravity northwest -pointsize 17 -size 500x caption:'foo
 '''
 
 if __name__ == '__main__':
-	#main()
-	gifmail(speed='9')
+	string = '''There is a theory which states that if ever anyone discovers exactly what the Universe is for and why it is here, it will instantly disappear and be replaced by something even more bizarre and inexplicable. There is another theory which states that this has already happened.
+	'''
+	jifftext(string,speed='3')
+	#gifmail(string,speed='9')
 	
