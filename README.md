@@ -3,7 +3,7 @@
 
 It's 2016 (almost), and it's time to upgrade from boring emails to fun emails. Create animated emails like these and become a rockstar.
 
-![alt text](http://sauravtom.com/static/img/r1.gif)
+![alt text](http://sauravtom.com/static/img/gifmail.gif)
 
 Dependencies
 + ffmpeg
