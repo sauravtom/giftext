@@ -9,6 +9,11 @@ Dependencies
 + ffmpeg
 + imagemagick
 
+It can also generate another class of animated text like these
+
+![alt text](https://raw.githubusercontent.com/sauravtom/gifmail/master/hithchiker.gif)
+
+
 P.S
 
 Here is a letter Abraham Lincoln sent to a college student who failed to get into Harvard University
