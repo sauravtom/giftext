@@ -12,12 +12,9 @@ def plog(text):
 def find_all(string, sub):
     return [i for i in range(len(string)) if string.startswith(sub, i)]
 
-def gifmail(speed='7'):
-	string = '''Hello there,
-Hope this mail finds you in the best of health and spirit.
-
-With Warm regards
-Saurav Tomar
+def gifmail(speed='9'):
+	string = '''The speed of the mail can be changed as per need.
+And you can add emojis too 😃 😄
 '''
 	string = string + " "
 	string = string.replace("'",'"')
@@ -29,13 +26,13 @@ Saurav Tomar
 		word = string[:counter]
 		print word,counter
 		arr.append([counter,word])
-		os.system("convert -background white -gravity northwest  -fill black -pointsize 17 -size 500x100 caption:'%s' %s/%s/%s.png"%(word,DIR_PATH,unique_id,counter))
+		os.system("convert -background white -gravity northwest  -fill black -pointsize 17 -size 500x500 caption:'%s' %s/%s/%s.png"%(word,DIR_PATH,unique_id,counter))
 		if (counter + 1) == len(string):
 			for i in xrange(1,5):
 				counter = counter + 1
 				word = string
 				arr.append([counter,word])
-				os.system("convert -background white -gravity northwest  -fill black -pointsize 17 -size 500x100 caption:'%s' %s/%s/%s.png"%(word,DIR_PATH,unique_id,counter))
+				os.system("convert -background white -gravity northwest  -fill black -pointsize 17 -size 500x500 caption:'%s' %s/%s/%s.png"%(word,DIR_PATH,unique_id,counter))
 		
 	os.system("ffmpeg -i %s/%s/%%1d.png %s/%s/semi_final.gif"%(DIR_PATH,unique_id,DIR_PATH,unique_id))
 	
@@ -80,5 +77,5 @@ convert mail_canvas.png -gravity northwest -pointsize 17 -size 500x caption:'foo
 
 if __name__ == '__main__':
 	#main()
-	gifmail()
+	gifmail(speed='9')
 	
