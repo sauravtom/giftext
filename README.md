@@ -3,7 +3,7 @@
 
 It's 2016 (almost), and it's time to upgrade from boring emails to fun emails. Create animated emails like these and become a rockstar.
 
-![alt text](http://sauravtom.com/static/img/gifmail.gif)
+![alt text](http://sauravtom.com/static/img/r1.gif)
 
 Dependencies
 + ffmpeg
@@ -13,4 +13,4 @@ P.S
 
 Here is a letter Abraham Lincoln sent to a college student who failed to get into Harvard University
 
-![alt text](https://raw.githubusercontent.com/sauravtom/gifmail/master/845bbd.gif)
+![alt text](https://raw.githubusercontent.com/sauravtom/gifmail/master/r2.gif)
