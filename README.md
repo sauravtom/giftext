@@ -13,4 +13,4 @@ P.S
 
 Here is a letter Abraham Lincoln sent to a college student who failed to get into Harvard University
 
-![alt text](https://raw.githubusercontent.com/sauravtom/gifmail/master/845bbd.gif)
+![alt text](https://raw.githubusercontent.com/sauravtom/gifmail/master/r2.gif)
