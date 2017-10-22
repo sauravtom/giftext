@@ -1,21 +1,38 @@
-##Gifmail
-[sauravtom.com/gifmail](http://sauravtom.com/gifmail/)
-
-It's 2016 (almost), and it's time to upgrade from boring emails to fun emails. Create animated emails like these and become a rockstar.
-
-![alt text](http://sauravtom.com/static/img/gifmail.gif)
-
-Dependencies
-+ ffmpeg
-+ imagemagick
-
-It can also generate another class of animated text like these
-
-![alt text](https://raw.githubusercontent.com/sauravtom/gifmail/master/hithchiker.gif)
+# Giftext
+Converts text to animated gifs
 
 
-P.S
+### Demo #1 (blinking animation)
+![All examples](https://raw.githubusercontent.com/sauravtom/giftext/master/assets/r1.gif)  
 
-Here is a letter Abraham Lincoln sent to a college student who failed to get into Harvard University
+### Demo #2 (typing animation)
+![All examples](https://raw.githubusercontent.com/sauravtom/giftext/master/assets/hithchiker.gif)  
 
-![alt text](https://raw.githubusercontent.com/sauravtom/gifmail/master/r2.gif)
+
+### Dependencies
+* Python 2.7.x 
+* [Imagemagick](https://www.imagemagick.org/) (for .gif output)
+* [ffmpeg](https://www.ffmpeg.org/) (for .mp4 output)
+
+```
+usage: giftext.py [-h] -t TEXT -o SAVEPATH -a ANIMATIONTYPE [-s SPEED]
+
+Giftext v1.0
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TEXT, --text TEXT  text string
+  -o SAVEPATH, --savepath SAVEPATH
+                        output gif path
+  -a ANIMATIONTYPE, --animationType ANIMATIONTYPE
+                        Type of animation (typing/static) | Default is static
+  -s SPEED, --speed SPEED
+                        speed of animation | Default is 8
+```
+
+### Example
+
+```
+python giftext.py -t 'hello world' -o foo.gif -a typing
+```
+
