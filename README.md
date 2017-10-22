@@ -3,10 +3,10 @@ Converts text to animated gifs
 
 
 ### Demo #1 (blinking animation)
-![All examples](https://raw.githubusercontent.com/sauravtom/giftext/master/assets/r1.gif)  
+![All examples](https://raw.githubusercontent.com/sauravtom/giftext/master/assets/hithchiker.gif)  
 
 ### Demo #2 (typing animation)
-![All examples](https://raw.githubusercontent.com/sauravtom/giftext/master/assets/hithchiker.gif)  
+![All examples](https://raw.githubusercontent.com/sauravtom/giftext/master/assets/r1.gif)  
 
 
 ### Dependencies
