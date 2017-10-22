@@ -5,6 +5,7 @@ import hashlib
 
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 
+#pretty log
 def plog(text):
 	n = len(text) + 4
 	print "%s \n  %s \n%s"%('*'*n,text,'*'*n)
@@ -12,7 +13,7 @@ def plog(text):
 def find_all(string, sub):
     return [i for i in range(len(string)) if string.startswith(sub, i)]
 
-def gifmail(string,speed='9'):
+def typing_animation(string,speed='9',output=''):
 	string = string + " "
 	string = string.replace("'",'"')
 	unique_id = hashlib.md5(string).hexdigest()[:6]
@@ -35,14 +36,18 @@ def gifmail(string,speed='9'):
 	
 	os.system("convert -delay 10x%s0 %s/%s/semi_final.gif %s/%s/final.gif"%(speed,DIR_PATH,unique_id,DIR_PATH,unique_id))
 
-	os.system("cp %s/%s/final.gif %s/%s.gif"%(DIR_PATH,unique_id,DIR_PATH,unique_id))
+	if not output:
+		os.system("cp %s/%s/final.gif %s/%s.gif"%(DIR_PATH,unique_id,DIR_PATH,unique_id))
+	else:
+		os.system("cp %s/%s/final.gif %s/%s"%(DIR_PATH,unique_id,DIR_PATH,output))
+
 	os.system("rm -rf %s/%s"%(DIR_PATH,unique_id))
 	os.system("open -a 'Google Chrome' %s/%s.gif"%(DIR_PATH,unique_id))
 	plog(unique_id)
 
 
 
-def jifftext(string,speed='3'):
+def static_animation(string,speed='3',output=''):
 	string.encode('ascii',errors='ignore')
 	string = string.replace("'",'"')
 	unique_id = hashlib.md5(string).hexdigest()[:6]
@@ -66,10 +71,13 @@ def jifftext(string,speed='3'):
 	os.system("ffmpeg -i %s/%s/%%1d.png %s/%s/semi_final.gif"%(DIR_PATH,unique_id,DIR_PATH,unique_id))
 	os.system("convert -delay 10x%s0 %s/%s/semi_final.gif %s/%s/final.gif"%(speed,DIR_PATH,unique_id,DIR_PATH,unique_id))
 
-	os.system("cp %s/%s/final.gif %s/%s.gif"%(DIR_PATH,unique_id,DIR_PATH,unique_id))
+	if not output:
+		os.system("cp %s/%s/final.gif %s/%s.gif"%(DIR_PATH,unique_id,DIR_PATH,unique_id))
+	else:
+		os.system("cp %s/%s/final.gif %s/%s"%(DIR_PATH,unique_id,DIR_PATH,output))
+
 	os.system("rm -rf %s/%s"%(DIR_PATH,unique_id))
 	os.system("open -a 'Google Chrome' %s/%s.gif"%(DIR_PATH,unique_id))
-
 
 
 '''
@@ -84,6 +92,6 @@ convert mail_canvas.png -gravity northwest -pointsize 17 -size 500x caption:'foo
 if __name__ == '__main__':
 	string = '''Not unnaturally, many elevators imbued with intelligence and precognition became terribly frustrated with the mindless business of going up and down, up and down, experimented briefly with the notion of going sideways, as a sort of existential protest, demanded participation in the decision-making process and finally took to squatting in basements sulking
 '''
-	jifftext(string,speed='3')
-	#gifmail(string,speed='9')
+	static_animation(string,speed='3')
+	typing_animation(string,speed='9')
 	
